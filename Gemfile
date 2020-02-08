@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.0'
 gem 'jinda', '0.1.9'
 gem 'jinda_adminlte', '0.0.5'
-gem 'skylight','4.1.1'
 gem 'geocoder', '1.4.9'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
