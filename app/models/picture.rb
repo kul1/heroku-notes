@@ -1,11 +1,10 @@
 # encoding: utf-8
-class Comment
+class Picture
   include Mongoid::Document
 		# jinda begin
 		include Mongoid::Timestamps
-  field :body, :type => String
-  belongs_to :article
+  field :picture, :type => String
+  field :description, :type => String
   belongs_to :user
-  validates :body, :user_id, :article_id, presence: true
   # jinda end
 end
