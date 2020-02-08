@@ -8,3 +8,9 @@ class Picture
   belongs_to :user
   # jinda end
 end
+		# jinda begin
+		include Mongoid::Timestamps
+  field :picture, :type => String
+  field :description, :type => String
+  belongs_to :user
+  # jinda end
