@@ -1,0 +1,21 @@
+- @title= "All Notes"
+%p
+- @page_title  = 'All Notes'
+= paginate @notes
+%table#note-table
+  %tr
+    %th Title
+    %th Description
+    %th Created
+    %th Updated
+    %th Delete
+    %th Edit  
+  - @notes.each do |note|
+    %tr
+      %td= link_to note.title, :controller=>"notes", :action=>"show", :id=>note.id
+      %td= note.text.html_safe
+      %td= note.created_at.strftime('%m/%d/%Y')
+      %td= note.updated_at.strftime('%m/%d/%Y')
+      %td(align='center')= link_to image_tag('delete.png', style:'border:none; float:none;'), "#", :onclick=>"if (confirm('Please Confirm')) {location.hash='/notes/destroy/#{note.id}';}"
+      %td(align='center')= link_to image_tag('pencil.png', style:'border:none; float:none;'), {controller: "jinda", action: "init", s: 'notes:xedit_note', note_id: note.id}, data: { confirm: "Please Confirm" }
+

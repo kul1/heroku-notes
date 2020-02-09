@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :users
 	resources :members
   mount Ckeditor::Engine => '/ckeditor'
-  root :to => 'jinda#index'
+  root :to => 'notes#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
