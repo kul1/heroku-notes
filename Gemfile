@@ -5,6 +5,8 @@ ruby '2.5.0'
 gem 'jinda', '0.1.9'
 gem 'jinda_adminlte', '0.0.5'
 gem 'geocoder', '1.4.9'
+gem 'rails_12factor', group: :production
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use Puma as the app server
