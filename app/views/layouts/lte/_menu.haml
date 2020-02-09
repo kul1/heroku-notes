@@ -23,17 +23,17 @@
   %li
     %a{"data-panel" => "main", :href => logout_path, "data-ajax"=>"false"} Sign Out
 - else
-  / Skip normal login by comment here
-  %li
-    %a{:href =>new_session_path,"data-panel" => "main"}
-      %i.fa.fa-circle-o
-      Sign In
-  %li
-    %a{:href =>new_identity_path, "data-panel" => "main"}
-      %i.fa.fa-circle-o
-        Sign Up 
-%l
-  = link_to "Refresh", "#", :onclick=>"window.location.replace('/')"
+  / Skip normal login
+  /%li
+  /  %a{:href =>new_session_path,"data-panel" => "main"}
+  /    %i.fa.fa-circle-o
+  /    Sign In
+  /%li
+  /  %a{:href =>new_identity_path, "data-panel" => "main"}
+  /    %i.fa.fa-circle-o
+  /      Sign Up 
+%li
+  /= link_to "Refresh", "#", :onclick=>"window.location.replace('/')"
 - if !login? 
   %li
     %a{:href => '/auth/facebook', "data-panel" => "main", rel: "external"}
