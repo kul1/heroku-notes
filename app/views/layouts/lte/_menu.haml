@@ -6,52 +6,19 @@
     Home
 
 = render 'layouts/lte/menu_mm'  
-%li.treeview
-  %a{:href => "#"}
-    Download from Github
-    %i.fa.fa-angle-left.pull-right
-  %ul.treeview-menu
-    %li
-      %a{:href => "https://www.github.com/kul1/jinda"} jinda
-    %li
-      %a{:href => "https://www.github.com/kul1/jinda_adminlte"} jinda_adminlte
-    %li
-      %a{:href => "https://www.github.com/kul1/jinda_adminbsb"} jinda_adminbsb
 - if login?
   %li
     %a{:href=>"/jinda/pending", "data-panel" => "main"} Pending Tasks
   %li
     %a{"data-panel" => "main", :href => logout_path, "data-ajax"=>"false"} Sign Out
 - else
-  / Skip normal login
-  /%li
-  /  %a{:href =>new_session_path,"data-panel" => "main"}
-  /    %i.fa.fa-circle-o
-  /    Sign In
-  /%li
-  /  %a{:href =>new_identity_path, "data-panel" => "main"}
-  /    %i.fa.fa-circle-o
-  /      Sign Up 
-%li
-  /= link_to "Refresh", "#", :onclick=>"window.location.replace('/')"
-- if !login? 
+  / Skip normal login here if need to
   %li
-    %a{:href => '/auth/facebook', "data-panel" => "main", rel: "external"}
-      %i.fa.fa-facebook 
-      Sign-in with facebook
+    %a{:href =>new_session_path,"data-panel" => "main"}
+      %i.fa.fa-circle-o
+      Sign In
   %li
-    %a{:href => '/auth/google_oauth2', "data-panel" => "main", rel: "external"}
-      %i.fa.fa-google
-      Sign-in with Google+
-%form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "_top"}
-  %input{:name => "cmd", :type => "hidden", :value => "_s-xclick"}/
-  %input{:name => "hosted_button_id", :type => "hidden", :value => "KHUWFP9JL5HS6"}/
-  %input{:alt => "PayPal - The safer, easier way to pay online!", :border => "0", :name => "submit", :src => "https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif", :type => "image"}/
-  %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypalobjects.com/en_US/i/scr/pixel.gif", :width => "1"}/
- 
-
-
- 
-
-
-      
+    %a{:href =>new_identity_path, "data-panel" => "main"}
+      %i.fa.fa-circle-o
+      Sign Up 
+%l
